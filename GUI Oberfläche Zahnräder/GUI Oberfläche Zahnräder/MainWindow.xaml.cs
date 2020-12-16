@@ -40,6 +40,7 @@ namespace GUI_Oberfläche_Zahnräder
             }
         }
 
+        Außenverzahnung av = new Außenverzahnung();
         public class Außenverzahnung
         {
             //Eingabevariablen
@@ -254,11 +255,9 @@ namespace GUI_Oberfläche_Zahnräder
         public void btn_Bestätigen_Click(object sender, RoutedEventArgs e)
         {
             //Außenverzahnung
-           
+            
             if (rtb_Gerad.IsChecked == true)
             {
-                
-                Außenverzahnung av = new Außenverzahnung();  
                 switch (CB_Werkstoff.Text)
                 {
                     case "GJL":
@@ -694,7 +693,7 @@ namespace GUI_Oberfläche_Zahnräder
         //CatiaControl
         
         
-            private void CatiaControl()
+            public void CatiaControl()
             {
                 try
                 {
@@ -704,18 +703,20 @@ namespace GUI_Oberfläche_Zahnräder
                     // Finde Catia Prozess
                     if (cc.CATIALaeuft())
                     {
-                        Console.WriteLine("0");
 
                         // Öffne ein neues Part
                         cc.ErzeugePart();
-                      
+
+                        //Achsensystem erstellen
+                        cc.ErzeugeAchsensystem();
+
 
                         // Erstelle eine Skizze
                         cc.ErstelleLeereSkizze();
-                        
 
-                        // Generiere ein Profil
-                        cc.Stirnzahnrad(av);
+
+                       // Generiere ein Profil
+                       cc.Stirnzahnrad(av);
                         
                         
                        

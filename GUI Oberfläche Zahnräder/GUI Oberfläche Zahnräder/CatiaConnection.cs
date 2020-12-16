@@ -37,7 +37,7 @@ namespace GUI_Oberfläche_Zahnräder
             return true;
         }
 
-        private void ErzeugeAchsensystem()
+        public void ErzeugeAchsensystem()
         {
             object[] arr = new object[] {0.0, 0.0, 0.0,
                                          0.0, 1.0, 0.0,
@@ -75,7 +75,7 @@ namespace GUI_Oberfläche_Zahnräder
             hsp_catiaPart.Part.Update();
         }
 
-        public void Stirnzahnrad(Außenverzahnung av)
+        public void Stirnzahnrad(MainWindow.Außenverzahnung av)
         {
             //Profil erstellen
             //Nullpunkt

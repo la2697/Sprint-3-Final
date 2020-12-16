@@ -25,7 +25,7 @@ namespace GUI_Oberfläche_Zahnräder
         public double d;                            //Teilkreisdurchmesser
         public double z;                            //Zähnezahl
         public double t;                            //Werkstoffdicke
-        
+
 
         //Help
         public int Fehler;
@@ -81,5 +81,8 @@ namespace GUI_Oberfläche_Zahnräder
             Wert = Math.Round(Wert, 2);
         }
 
+
     }
+
 }
+
