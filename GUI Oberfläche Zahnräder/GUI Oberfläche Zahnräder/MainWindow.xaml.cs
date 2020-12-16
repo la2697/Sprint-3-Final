@@ -45,7 +45,7 @@ namespace GUI_Oberfläche_Zahnräder
         {
             //Eingabevariablen
             public double m;                            //Modul
-            public double c;                            //Kopfspiel Standard
+            public double c;                            //Kopfspielfaktor
             public double d;                            //Teilkreisdurchmesser
             public double z;                            //Zähnezahl
             public double t;                            //Werkstoffdicke
@@ -73,7 +73,7 @@ namespace GUI_Oberfläche_Zahnräder
             public double V;                            //Volumen mm3
             public double M;                            //Masse g
             public double Wert;                         //Preis
-
+            public double C;                            //Kopfspiel
            
 
 
@@ -81,12 +81,13 @@ namespace GUI_Oberfläche_Zahnräder
             {
                 //Formeln
                 d = m * z;
-                h = (2 * m) + c;
+                C = c * m;
+                h = (2 * m) + C;
                 p = Math.PI * m;
-                da = d + (2 + m);
+                da = d + (2 * m);
                 ha = m;
-                hf = m + c;
-                df = d - 2 * (m + c);
+                hf = m + C;
+                df = d - 2 * (m + C);
                 A = (Math.PI * d * d) / 4;
                 V = A * t;
                 M = V * 1 / 1000 * material;
@@ -103,6 +104,7 @@ namespace GUI_Oberfläche_Zahnräder
                 V = Math.Round(V, 2);
                 M = Math.Round(M, 2);
                 Wert = Math.Round(Wert, 2);
+                C = Math.Round(C, 2);
             }
 
         }
@@ -304,7 +306,7 @@ namespace GUI_Oberfläche_Zahnräder
                     av.Fehler = 1;
                 }
 
-                //Kopfspiel
+                //Kopfspielfaktor
                 Zahlencheck = TB_0167.Text;
                 if (Zahlenprüfung(Zahlencheck) == true)
                 {
@@ -369,7 +371,7 @@ namespace GUI_Oberfläche_Zahnräder
                     lbl_Kopfkreisdurchmesser.Content = Convert.ToString(av.da);
                     lbl_Gewicht.Content = Convert.ToString(av.M);
                     lbl_Preis.Content = Convert.ToString(av.Wert);
-                    MessageBox.Show(Convert.ToString(av.c));
+                    MessageBox.Show(Convert.ToString(av.C));
 
                     //Felder ausbleichen
                     lbl_stirnmodul.IsEnabled = false;
@@ -708,7 +710,7 @@ namespace GUI_Oberfläche_Zahnräder
                         cc.ErzeugePart();
 
                         //Achsensystem erstellen
-                        cc.ErzeugeAchsensystem();
+                        //cc.ErzeugeAchsensystem();
 
 
                         // Erstelle eine Skizze
@@ -717,9 +719,10 @@ namespace GUI_Oberfläche_Zahnräder
 
                        // Generiere ein Profil
                        cc.Stirnzahnrad(av);
-                        
-                        
-                       
+
+
+                      //Modellerzeugung
+                      //cc.Modellerzeugung();
                         
                     }
                     else
