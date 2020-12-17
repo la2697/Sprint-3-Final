@@ -653,6 +653,7 @@ namespace GUI_Oberfläche_Zahnräder
             txt_Dicke.Text = " ";
             tb_Winkel.Text = " ";
             TB_0167.Text = "0,167";
+            lb_Winkeltext.Content = " ";
 
             //ComboButton und RadioButton zurücksetzen
             S235JR.IsSelected = true;
@@ -665,6 +666,8 @@ namespace GUI_Oberfläche_Zahnräder
             lb_Stirnteilung.IsEnabled = true;
             lb_Winkel.IsEnabled = true;
             lb_Schrägungswinkel.IsEnabled = true;
+            sliderbeta.IsEnabled = false;
+            tb_Winkel.IsEnabled = false;
             
             //Silder zurücksetzen
 

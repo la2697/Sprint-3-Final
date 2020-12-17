@@ -261,7 +261,7 @@
                             <ColumnDefinition Width="34*"/>
                             <ColumnDefinition Width="141*"/>
                         </Grid.ColumnDefinitions>
-                        <Label x:Name="lb_Teilkreis" Content="Teilkreisdurchmesser [mm]:" HorizontalAlignment="Left" Margin="4,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.513,0.086" FontFamily="Calibri" FontSize="16" Width="335" Height="30" Grid.ColumnSpan="2">
+                        <Label x:Name="lb_Teilkreis" Content="Teilkreisdurchmesser [mm]:" HorizontalAlignment="Left" Margin="4,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.513,0.086" FontFamily="Calibri" FontSize="16" Width="332" Height="30" Grid.ColumnSpan="2">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
@@ -277,7 +277,7 @@
                                 </LinearGradientBrush>
                             </Label.Background>
                         </Label>
-                        <Label x:Name="lb_Preis" Content="Preis [€]:" HorizontalAlignment="Left" Margin="4,369,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Width="335" Height="30" Grid.ColumnSpan="2">
+                        <Label x:Name="lb_Preis" Content="Preis [€]:" HorizontalAlignment="Left" Margin="4,369,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Width="332" Height="30" Grid.ColumnSpan="2">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
@@ -293,7 +293,7 @@
                                 </LinearGradientBrush>
                             </Label.Background>
                         </Label>
-                        <Label x:Name="lb_Gewicht" Content="Gewicht [g]:" HorizontalAlignment="Left" Margin="4,333,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Width="335" Height="30" Grid.ColumnSpan="2">
+                        <Label x:Name="lb_Gewicht" Content="Gewicht [g]:" HorizontalAlignment="Left" Margin="4,333,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Width="332" Height="30" Grid.ColumnSpan="2">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
@@ -309,7 +309,7 @@
                                 </LinearGradientBrush>
                             </Label.Background>
                         </Label>
-                        <Label x:Name="lb_Fußkreisdurchmesser" Content="Fußkreisdurchmesser[mm]:" HorizontalAlignment="Left" Margin="4,81,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Width="335" Height="30" Grid.ColumnSpan="2">
+                        <Label x:Name="lb_Fußkreisdurchmesser" Content="Fußkreisdurchmesser[mm]:" HorizontalAlignment="Left" Margin="4,81,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Width="332" Height="30" Grid.ColumnSpan="2">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
@@ -325,7 +325,7 @@
                                 </LinearGradientBrush>
                             </Label.Background>
                         </Label>
-                        <Label x:Name="lb_Teilung" Content="(Normal-)Teilung:" HorizontalAlignment="Left" Margin="4,153,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.704,1.152" FontFamily="Calibri" FontSize="16" Height="30" Width="335" Grid.ColumnSpan="2">
+                        <Label x:Name="lb_Teilung" Content="(Normal-)Teilung:" HorizontalAlignment="Left" Margin="4,153,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.704,1.152" FontFamily="Calibri" FontSize="16" Height="30" Width="332" Grid.ColumnSpan="2">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
@@ -341,7 +341,7 @@
                                 </LinearGradientBrush>
                             </Label.Background>
                         </Label>
-                        <Label x:Name="lb_Zahnkopfhöhe" Content="Zahnkopfhöhe [mm]:" HorizontalAlignment="Left" Margin="4,189,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Width="335" Height="30" Grid.ColumnSpan="2">
+                        <Label x:Name="lb_Zahnkopfhöhe" Content="Zahnkopfhöhe [mm]:" HorizontalAlignment="Left" Margin="4,189,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Width="332" Height="30" Grid.ColumnSpan="2">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
@@ -357,7 +357,7 @@
                                 </LinearGradientBrush>
                             </Label.Background>
                         </Label>
-                        <Label x:Name="lb_Zahnfußhöhe" Content="Zahnfußhöhe [mm]:" HorizontalAlignment="Left" Margin="4,225,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Width="335" Height="30" Grid.ColumnSpan="2">
+                        <Label x:Name="lb_Zahnfußhöhe" Content="Zahnfußhöhe [mm]:" HorizontalAlignment="Left" Margin="4,225,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="16" Width="332" Height="30" Grid.ColumnSpan="2">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
@@ -373,7 +373,7 @@
                                 </LinearGradientBrush>
                             </Label.Background>
                         </Label>
-                        <Label Content="Zahnhöhe:" HorizontalAlignment="Left" Margin="4,117,0,0" VerticalAlignment="Top" Width="335" Height="30" FontFamily="Calibri" FontSize="16" Grid.ColumnSpan="2">
+                        <Label Content="Zahnhöhe:" HorizontalAlignment="Left" Margin="4,117,0,0" VerticalAlignment="Top" Width="332" Height="30" FontFamily="Calibri" FontSize="16" Grid.ColumnSpan="2">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
@@ -501,7 +501,7 @@
                                 </LinearGradientBrush>
                             </Label.Background>
                         </Label>
-                        <Label Content="Kopfkreisdurchmesser [mm]:" HorizontalAlignment="Left" Margin="4,45,0,0" VerticalAlignment="Top" Width="335" FontFamily="Calibri" FontSize="16" Height="30" Grid.ColumnSpan="2">
+                        <Label Content="Kopfkreisdurchmesser [mm]:" HorizontalAlignment="Left" Margin="4,45,0,0" VerticalAlignment="Top" Width="332" FontFamily="Calibri" FontSize="16" Height="30" Grid.ColumnSpan="2">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
@@ -533,7 +533,7 @@
                                 </LinearGradientBrush>
                             </Label.Background>
                         </Label>
-                        <Label Content="" x:Name="lbl_Teilkreisdurchmesser" HorizontalAlignment="Left" Margin="182,10,0,0" VerticalAlignment="Top" Width="88" Height="30" FontSize="19" FontFamily="Calibri" Grid.Column="1">
+                        <Label Content="" x:Name="lbl_Teilkreisdurchmesser" HorizontalAlignment="Left" Margin="183,10,0,0" VerticalAlignment="Top" Width="88" Height="30" FontSize="19" FontFamily="Calibri" Grid.Column="1">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
@@ -549,7 +549,7 @@
                                 </LinearGradientBrush>
                             </Label.Background>
                         </Label>
-                        <Label x:Name="lb_Stirnmodul" Content="Stirnmodul:" HorizontalAlignment="Left" Margin="4,261,0,0" VerticalAlignment="Top" Height="30" Width="335" Grid.ColumnSpan="2" FontFamily="Calibri" FontSize="16">
+                        <Label x:Name="lb_Stirnmodul" Content="Stirnmodul:" HorizontalAlignment="Left" Margin="4,261,0,0" VerticalAlignment="Top" Height="30" Width="332" Grid.ColumnSpan="2" FontFamily="Calibri" FontSize="16">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
@@ -565,7 +565,7 @@
                                 </LinearGradientBrush>
                             </Label.Background>
                         </Label>
-                        <Label x:Name="lb_Stirnteilung" Content="Stirnteilung:" HorizontalAlignment="Left" Margin="4,297,0,0" VerticalAlignment="Top" Height="30" Width="335" Grid.ColumnSpan="2" FontFamily="Calibri" FontSize="16">
+                        <Label x:Name="lb_Stirnteilung" Content="Stirnteilung:" HorizontalAlignment="Left" Margin="4,297,0,0" VerticalAlignment="Top" Height="30" Width="332" Grid.ColumnSpan="2" FontFamily="Calibri" FontSize="16">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
