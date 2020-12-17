@@ -49,7 +49,7 @@
                 </Button>
             </Grid>
             <TabControl Height="497" Margin="693,-35,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="345">
-                <TabItem Header="Eingangsparameter">
+                <TabItem Header="Eingangsparameter" x:Name="Eingangsparameter">
                     <Grid Background="#FFE5E5E5">
                         <Grid Background="#FF737687">
                             <Grid.ColumnDefinitions>
@@ -421,22 +421,6 @@
                                 </LinearGradientBrush>
                             </Label.Background>
                         </Label>
-                        <Label Content="" x:Name="lbl_Teilung" HorizontalAlignment="Left" Margin="183,153,0,0" VerticalAlignment="Top" Width="88" Height="30" FontSize="19" FontFamily="Calibri" Grid.Column="1">
-                            <Label.Background>
-                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                    <LinearGradientBrush.RelativeTransform>
-                                        <TransformGroup>
-                                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
-                                            <RotateTransform Angle="90" CenterY="0.5" CenterX="0.5"/>
-                                            <TranslateTransform/>
-                                        </TransformGroup>
-                                    </LinearGradientBrush.RelativeTransform>
-                                    <GradientStop Color="#FFA8A8A8" Offset="0"/>
-                                    <GradientStop Color="#FFE6E6E6" Offset="1"/>
-                                </LinearGradientBrush>
-                            </Label.Background>
-                        </Label>
                         <Label Content="" x:Name="lbl_Zahnfußhöhe" HorizontalAlignment="Left" Margin="183,225,0,0" VerticalAlignment="Top" Width="88" Height="30" FontSize="19" FontFamily="Calibri" Grid.Column="1">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -615,6 +599,22 @@
                         </Label>
                         <Button Click="Button_Click_1" Content="Catia starten" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="147" Height="43" FontFamily="Calibri" FontSize="16" FontStyle="Italic" FontWeight="Bold" Grid.ColumnSpan="2"/>
                         <Button Click="Button_Click_2" Content="3D-Modell erstellen" HorizontalAlignment="Left" Margin="116,413,0,0" VerticalAlignment="Top" Width="147" Height="43" FontFamily="Calibri" FontSize="16" FontStyle="Italic" FontWeight="Bold" Grid.Column="1"/>
+                        <Label Content="" x:Name="lbl_Normalteilung" HorizontalAlignment="Left" Margin="183,153,0,0" VerticalAlignment="Top" Width="88" Height="30" FontSize="19" FontFamily="Calibri" Grid.Column="1">
+                            <Label.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                            <RotateTransform Angle="90" CenterY="0.5" CenterX="0.5"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#FFA8A8A8" Offset="0"/>
+                                    <GradientStop Color="#FFE6E6E6" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Label.Background>
+                        </Label>
                     </Grid>
                 </TabItem>
             </TabControl>

@@ -182,13 +182,13 @@ namespace GUI_Oberfläche_Zahnräder
             public double mt;                           //Stirnmodul
             public double mn;                           //Normalmodul
             public double pt;                           //Stirnteilung
-            public double pn;                           //Normalteilung
             public double c;                            //Kopfspiel Standard
             public double d;                            //Teilkreisdurchmesser
             public double z;                            //Zähnezahl
             public double t;                            //Werkstoffdicke
             public double beta;                         //Schrägungswinkel (8°-25°)
-
+           
+            
 
             //Help
             public int Fehler;
@@ -213,7 +213,7 @@ namespace GUI_Oberfläche_Zahnräder
             public double M;                            //Masse g
             public double Wert;                         //Preis
             public double dm;                           //Mittlerer Durchmesser
-
+            public double pn;                           //Normalteilung
             public void Berechnung()
             {
                 //Formeln
@@ -221,7 +221,8 @@ namespace GUI_Oberfläche_Zahnräder
                 d = mt * z;
                 h = (2 * mn) + c;
                 pn = Math.PI * mn;
-                pt = pn / Math.Cos(beta);
+                pt = pn;
+                MessageBox.Show(Convert.ToString(pt));
                 da = d + (2 * mn);
                 ha = mn;
                 hf = mn + c;
@@ -246,6 +247,7 @@ namespace GUI_Oberfläche_Zahnräder
                 V = Math.Round(V, 2);
                 M = Math.Round(M, 2);
                 Wert = Math.Round(Wert, 2);
+                mn = Math.Round(mn, 2);
             }
 
         }
@@ -368,7 +370,7 @@ namespace GUI_Oberfläche_Zahnräder
                     lbl_Teilkreisdurchmesser.Content = Convert.ToString(av.d);
                     lbl_Zahnfußhöhe.Content = Convert.ToString(av.hf);
                     lbl_Zahnkopfhöhe.Content = Convert.ToString(av.ha);
-                    lbl_Teilung.Content = Convert.ToString(av.p);
+                    lbl_Normalteilung.Content = Convert.ToString(av.p);
                     lbl_Kopfkreisdurchmesser.Content = Convert.ToString(av.da);
                     lbl_Gewicht.Content = Convert.ToString(av.M);
                     lbl_Preis.Content = Convert.ToString(av.Wert);
@@ -492,7 +494,7 @@ namespace GUI_Oberfläche_Zahnräder
                     lbl_Teilkreisdurchmesser.Content = Convert.ToString(iv.d);
                     lbl_Zahnfußhöhe.Content = Convert.ToString(iv.hf);
                     lbl_Zahnkopfhöhe.Content = Convert.ToString(iv.ha);
-                    lbl_Teilung.Content = Convert.ToString(iv.p);
+                    lbl_Normalteilung.Content = Convert.ToString(iv.p);
                     lbl_Kopfkreisdurchmesser.Content = Convert.ToString(iv.da);
                     lbl_Gewicht.Content = Convert.ToString(iv.M);
                     lbl_Preis.Content = Convert.ToString(iv.Wert);
@@ -614,11 +616,13 @@ namespace GUI_Oberfläche_Zahnräder
                     lbl_Teilkreisdurchmesser.Content = Convert.ToString(sv.d);
                     lbl_Zahnfußhöhe.Content = Convert.ToString(sv.hf);
                     lbl_Zahnkopfhöhe.Content = Convert.ToString(sv.ha);
-                    lbl_Teilung.Content = Convert.ToString(sv.p);
+                    lbl_Normalteilung.Content = Convert.ToString(sv.pn);
                     lbl_Kopfkreisdurchmesser.Content = Convert.ToString(sv.da);
                     lbl_Gewicht.Content = Convert.ToString(sv.M);
                     lbl_Preis.Content = Convert.ToString(sv.Wert);
                     tb_Winkel.Text = Convert.ToString(sv.beta);
+                    lbl_stirnmodul.Content = Convert.ToString(sv.mt);
+                    lbl_stirnteilung.Content = Convert.ToString(sv.pt);
                 }
             }
 
@@ -639,7 +643,7 @@ namespace GUI_Oberfläche_Zahnräder
             lbl_Teilkreisdurchmesser.Content = " ";
             lbl_Zahnfußhöhe.Content = " ";
             lbl_Zahnkopfhöhe.Content = " ";
-            lbl_Teilung.Content = " ";
+            lbl_Normalteilung.Content = " ";
             lbl_Kopfkreisdurchmesser.Content = " ";
             lbl_Gewicht.Content = " ";
             lbl_Preis.Content = " ";
