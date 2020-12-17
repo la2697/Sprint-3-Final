@@ -92,7 +92,7 @@
 
 
 
-                            <Label x:Name="lb_Kopfspiele" Content="Kopfspiel:" HorizontalAlignment="Left" Margin="5,45,0,0" VerticalAlignment="Top" Width="329" FontFamily="Calibri" FontSize="16" Height="30" Grid.ColumnSpan="2">
+                            <Label x:Name="lb_Kopfspiele" Content="Kopfspielfaktor:" HorizontalAlignment="Left" Margin="5,45,0,0" VerticalAlignment="Top" Width="329" FontFamily="Calibri" FontSize="16" Height="30" Grid.ColumnSpan="2">
                                 <Label.Background>
                                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                         <LinearGradientBrush.RelativeTransform>
@@ -373,7 +373,7 @@
                                 </LinearGradientBrush>
                             </Label.Background>
                         </Label>
-                        <Label Content="Zahnhöhe" HorizontalAlignment="Left" Margin="4,117,0,0" VerticalAlignment="Top" Width="335" Height="30" FontFamily="Calibri" FontSize="16" Grid.ColumnSpan="2">
+                        <Label Content="Zahnhöhe:" HorizontalAlignment="Left" Margin="4,117,0,0" VerticalAlignment="Top" Width="335" Height="30" FontFamily="Calibri" FontSize="16" Grid.ColumnSpan="2">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
@@ -469,7 +469,7 @@
                                 </LinearGradientBrush>
                             </Label.Background>
                         </Label>
-                        <Label Content="" x:Name="lbl_Gewicht" HorizontalAlignment="Left" Margin="185,334,0,0" VerticalAlignment="Top" Width="88" Height="30" FontSize="19" FontFamily="Calibri" Grid.Column="1">
+                        <Label Content="" x:Name="lbl_Gewicht" HorizontalAlignment="Left" Margin="183,333,0,0" VerticalAlignment="Top" Width="88" Height="30" FontSize="19" FontFamily="Calibri" Grid.Column="1">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
@@ -485,7 +485,7 @@
                                 </LinearGradientBrush>
                             </Label.Background>
                         </Label>
-                        <Label Content="" x:Name="lbl_Preis" HorizontalAlignment="Left" Margin="185,368,0,0" VerticalAlignment="Top" Width="88" Height="30" FontSize="19" FontFamily="Calibri" Grid.Column="1">
+                        <Label Content="" x:Name="lbl_Preis" HorizontalAlignment="Left" Margin="183,369,0,0" VerticalAlignment="Top" Width="88" Height="30" FontSize="19" FontFamily="Calibri" Grid.Column="1">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
@@ -533,7 +533,7 @@
                                 </LinearGradientBrush>
                             </Label.Background>
                         </Label>
-                        <Label Content="" x:Name="lbl_Teilkreisdurchmesser" HorizontalAlignment="Left" Margin="183.5,10,0,0" VerticalAlignment="Top" Width="88" Height="30" FontSize="19" FontFamily="Calibri" Grid.Column="1">
+                        <Label Content="" x:Name="lbl_Teilkreisdurchmesser" HorizontalAlignment="Left" Margin="182,10,0,0" VerticalAlignment="Top" Width="88" Height="30" FontSize="19" FontFamily="Calibri" Grid.Column="1">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
@@ -549,7 +549,7 @@
                                 </LinearGradientBrush>
                             </Label.Background>
                         </Label>
-                        <Label x:Name="lb_Stirnmodul" Content="Stirnmodul" HorizontalAlignment="Left" Margin="4,261,0,0" VerticalAlignment="Top" Height="30" Width="335" Grid.ColumnSpan="2" FontFamily="Calibri" FontSize="16">
+                        <Label x:Name="lb_Stirnmodul" Content="Stirnmodul:" HorizontalAlignment="Left" Margin="4,261,0,0" VerticalAlignment="Top" Height="30" Width="335" Grid.ColumnSpan="2" FontFamily="Calibri" FontSize="16">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
@@ -565,7 +565,7 @@
                                 </LinearGradientBrush>
                             </Label.Background>
                         </Label>
-                        <Label x:Name="lb_Stirnteilung" Content="Stirnteilung" HorizontalAlignment="Left" Margin="4,297,0,0" VerticalAlignment="Top" Height="30" Width="335" Grid.ColumnSpan="2" FontFamily="Calibri" FontSize="16">
+                        <Label x:Name="lb_Stirnteilung" Content="Stirnteilung:" HorizontalAlignment="Left" Margin="4,297,0,0" VerticalAlignment="Top" Height="30" Width="335" Grid.ColumnSpan="2" FontFamily="Calibri" FontSize="16">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
@@ -613,8 +613,8 @@
                                 </LinearGradientBrush>
                             </Label.Background>
                         </Label>
-                        <Button Click="Button_Click_1" Content="Programm schließen" HorizontalAlignment="Left" Margin="120,413,0,0" VerticalAlignment="Top" Width="147" Height="43" FontFamily="Calibri" FontSize="16" FontStyle="Italic" FontWeight="Bold" Grid.Column="1"/>
-                        <Button Click="Button_Click_2" Content="3D-Modell erstellen" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="147" Height="43" FontFamily="Calibri" FontSize="16" FontStyle="Italic" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                        <Button Click="Button_Click_1" Content="Catia starten" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="147" Height="43" FontFamily="Calibri" FontSize="16" FontStyle="Italic" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                        <Button Click="Button_Click_2" Content="3D-Modell erstellen" HorizontalAlignment="Left" Margin="116,413,0,0" VerticalAlignment="Top" Width="147" Height="43" FontFamily="Calibri" FontSize="16" FontStyle="Italic" FontWeight="Bold" Grid.Column="1"/>
                     </Grid>
                 </TabItem>
             </TabControl>
@@ -804,7 +804,7 @@
                     <RowDefinition Height="27*"/>
                 </Grid.RowDefinitions>
                 <RadioButton Click="rtb_Gerad_Click" IsChecked="True" GroupName="Wähle ein Zahnrad" x:Name="rtb_Gerad" Content="Stirnzahnrad" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Calibri" FontSize="18" Margin="10,10,0,0" Width="121"/>
-                <Image x:Name="Im_Gerad" HorizontalAlignment="Left" Height="83" Margin="10,7,0,0" VerticalAlignment="Top" Width="86" Source="/Bilder/Stirnrad.PNG" Grid.RowSpan="2" Grid.Column="1"/>
+                <Image x:Name="Im_Gerad" HorizontalAlignment="Left" Height="83" Margin="10,4,0,0" VerticalAlignment="Top" Width="86" Source="/Bilder/Stirnrad.PNG" Grid.RowSpan="2" Grid.Column="1"/>
             </Grid>
             <Label Content="Wähle ein Zahnradtyp:" VerticalAlignment="Top" FontSize="24" FontFamily="Calibri" Foreground="Black" AutomationProperties.IsOffscreenBehavior="Onscreen" Height="39" Margin="10,10,0,0" FontWeight="Bold" HorizontalAlignment="Left" Width="340">
                 <Label.Background>
@@ -841,7 +841,7 @@
                         <GradientStop Color="#FFE8E8E8" Offset="1"/>
                     </LinearGradientBrush>
                 </Grid.Background>
-                <Image x:Name="Im_Schräg" Height="80" Margin="219,10,0,0" VerticalAlignment="Top" Source="/Bilder/Stirnrad SV.PNG" HorizontalAlignment="Left" Width="84" Grid.Column="1"/>
+                <Image x:Name="Im_Schräg" Height="81" Margin="219,5,0,0" VerticalAlignment="Top" Source="/Bilder/Stirnrad SV.PNG" HorizontalAlignment="Left" Width="86" Grid.Column="1"/>
                 <RadioButton Click="rtb_Schräg_Click" GroupName="Wähle ein Zahnrad" x:Name="rtb_Schräg" Content="Stirnrad schrägverzahnt" Margin="10,10,135,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="18" Height="22" Grid.ColumnSpan="2"/>
                 <Label IsEnabled="False" x:Name="lb_Winkeltext" Content="Schrägungswinkel in [°]:" HorizontalAlignment="Left" Margin="0,37,0,0" VerticalAlignment="Top" Width="178" Grid.Column="1"/>
                 <Slider IsEnabled="False" IsSnapToTickEnabled="true" Grid.Column="1" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Width="164" Maximum="25" Minimum="1" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="True" TickPlacement="TopLeft" Cursor="" Name="sliderbeta" Value="1"/>
@@ -862,7 +862,7 @@
                         <GradientStop Color="#FFE8E8E8" Offset="1"/>
                     </LinearGradientBrush>
                 </Grid.Background>
-                <Image  x:Name="Im_Innenzahnrad" HorizontalAlignment="Left" Height="85" Margin="250,5,0,0" VerticalAlignment="Top" Width="84" Source="/Bilder/Innenrad.PNG"/>
+                <Image  x:Name="Im_Innenzahnrad" HorizontalAlignment="Left" Height="85" Margin="249,3,0,0" VerticalAlignment="Top" Width="84" Source="/Bilder/Innenrad.PNG"/>
                 <RadioButton Click="rtb_Innenzahnrad_Click" GroupName="Wähle ein Zahnrad" x:Name="rtb_Innenzahnrad" Content="Innenzahnrad" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Calibri" FontSize="18" Margin="10,10,0,0"/>
             </Grid>
         </Grid>

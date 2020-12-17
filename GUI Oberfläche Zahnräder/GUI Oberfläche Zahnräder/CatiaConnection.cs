@@ -97,7 +97,7 @@ namespace GUI_Oberfläche_Zahnräder
 
             double Alpha = 2;
             double Alpharad = Math.PI * Alpha / 180;
-            double Beta = 120 / av.z;
+            double Beta = 140 / av.z;
             double Betarad = Math.PI * Beta / 180;
             double Gamma = 90 - (Alpha - Beta);
             double Gammarad = Math.PI * Gamma / 180;
@@ -124,25 +124,17 @@ namespace GUI_Oberfläche_Zahnräder
             Factory2D catfactory2D1 = hsp_catiaProfil.OpenEdition();
 
             //Nun die Punkte in die Skizze
-            Point2D point_Ursprung = catfactory2D1.CreatePoint(x0, y0);                                                         //PKT1
-            Point2D point_KopfkreisLinks = catfactory2D1.CreatePoint(xKopfkreis, yKopfkreis);
-            Point2D point_FußkreisLinks = catfactory2D1.CreatePoint(xFußkreis, yFußkreis);
+            Point2D point_Ursprung = catfactory2D1.CreatePoint(x0, y0);                                                         
+            Point2D point_KopfkreisLinks = catfactory2D1.CreatePoint(xKopfkreis, yKopfkreis);                                   
+            Point2D point_FußkreisLinks = catfactory2D1.CreatePoint(xFußkreis, yFußkreis);                                    
             Point2D point_KopfkreisRechts = catfactory2D1.CreatePoint(-xKopfkreis, yKopfkreis);
             Point2D point_FußkreisRechts = catfactory2D1.CreatePoint(-xFußkreis, yFußkreis);
             Point2D point_AnfangspunktLinks = catfactory2D1.CreatePoint(-x_AnfangspunktFußkreis, y_AnfangspunktFußkreis);
 
-            //Erzeuge Linien
-            Line2D line_AnfangspunktFußkreis = catfactory2D1.CreateLine(-x_AnfangspunktFußkreis, y_AnfangspunktFußkreis, xFußkreis, yFußkreis);
-            line_AnfangspunktFußkreis.StartPoint = point_AnfangspunktLinks;
-            line_AnfangspunktFußkreis.EndPoint = point_FußkreisLinks;
-
+            //Linien
             Line2D line_FußkreisKopfkreis = catfactory2D1.CreateLine(xFußkreis, yFußkreis, xKopfkreis, yKopfkreis);
             line_FußkreisKopfkreis.StartPoint = point_FußkreisLinks;
             line_FußkreisKopfkreis.EndPoint = point_KopfkreisLinks;
-
-            Line2D line_KopfkreislinksKopfkreisrechts = catfactory2D1.CreateLine(xKopfkreis, yKopfkreis, -xKopfkreis, yKopfkreis);
-            line_KopfkreislinksKopfkreisrechts.StartPoint = point_KopfkreisLinks;
-            line_KopfkreislinksKopfkreisrechts.EndPoint = point_KopfkreisRechts;
 
             Line2D line_KopfkreisFußkreis = catfactory2D1.CreateLine(-xKopfkreis, yKopfkreis, -xFußkreis, yFußkreis);
             line_KopfkreisFußkreis.StartPoint = point_KopfkreisRechts;
@@ -150,9 +142,16 @@ namespace GUI_Oberfläche_Zahnräder
 
 
             //Kreise
-            
+            Circle2D circle_KopfkreisLinksRechts = catfactory2D1.CreateCircle(x0, y0, Kopfkreisradius, 0, Math.PI * 2);
+            circle_KopfkreisLinksRechts.CenterPoint = point_Ursprung;
+            circle_KopfkreisLinksRechts.EndPoint = point_KopfkreisLinks;
+            circle_KopfkreisLinksRechts.StartPoint = point_KopfkreisRechts;
 
-            
+            Circle2D circle_AnfangFußkreis = catfactory2D1.CreateCircle(x0, x0, Fußkreisradius, 0, Math.PI * 2);
+            circle_AnfangFußkreis.CenterPoint = point_Ursprung;
+            circle_AnfangFußkreis.EndPoint = point_AnfangspunktLinks;
+            circle_AnfangFußkreis.StartPoint = point_FußkreisLinks;
+
             hsp_catiaProfil.CloseEdition();
 
             hsp_catiaPart.Part.Update();
@@ -160,7 +159,7 @@ namespace GUI_Oberfläche_Zahnräder
 
             //Profilerstellen Ende
 
-            //Kreistmuster
+            //Kreismuster
 
             ShapeFactory SF = (ShapeFactory)hsp_catiaPart.Part.ShapeFactory;
             HybridShapeFactory HSF = (HybridShapeFactory)hsp_catiaPart.Part.HybridShapeFactory;

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
 
 
@@ -678,10 +679,20 @@ namespace GUI_Oberfläche_Zahnräder
             Infofenster.Show();
         }
 
-        //Programm schließen
+        //Programm Catia öffnen
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Close();
+            CatiaConnection cc = new CatiaConnection();
+            if (cc.CATIALaeuft())
+            {
+                MessageBox.Show("Catia wurde bereits gestartet.");
+            }
+            else
+            {
+                Process StarteCatia = new Process();
+                StarteCatia.StartInfo.FileName = "CNext.exe";
+                StarteCatia.Start();
+            }
         }
 
         //Catia Part erstellen
