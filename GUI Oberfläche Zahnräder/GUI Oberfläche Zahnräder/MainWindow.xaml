@@ -9,12 +9,16 @@
     Title="Zahnradprogrammierung" Height="660" Width="1070" ResizeMode="CanResize" Background="White">
     <Grid>
         <Grid Margin="0,150,10,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="48*"/>
+                <RowDefinition Height="109*"/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1071*"/>
                 <ColumnDefinition Width="298*"/>
             </Grid.ColumnDefinitions>
-            <Image Source="/Bilder/Zahnrad Hintergrund.jpg" VerticalAlignment="Top" Opacity="0.9" Margin="10,-45,0,0" Height="516" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="1043"/>
-            <Grid HorizontalAlignment="Left" Height="112" Margin="325,350,0,0" VerticalAlignment="Top" Width="351" Background="#FFACA7A7">
+            <Image Source="/Bilder/Zahnrad Hintergrund.jpg" VerticalAlignment="Top" Opacity="0.9" Margin="10,-45,-0.2,0" Height="516" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="1043" Grid.RowSpan="2"/>
+            <Grid HorizontalAlignment="Left" Height="112" Margin="325,206,0,0" VerticalAlignment="Top" Width="351" Background="#FFACA7A7" Grid.Row="1">
                 <Button Click="btn_Zurück_Click" x:Name="btn_Zurück" Content="Zurücksetzen" HorizontalAlignment="Left" Margin="63,10,0,0" VerticalAlignment="Top" Width="220" Height="45" FontFamily="Arial" FontSize="20" FontWeight="Bold" FontStyle="Italic">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -48,7 +52,7 @@
                     </Button.Background>
                 </Button>
             </Grid>
-            <TabControl Height="497" Margin="693,-35,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="345">
+            <TabControl Height="497" Margin="693,-35,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="345" Grid.RowSpan="2">
                 <TabItem Header="Eingangsparameter" x:Name="Eingangsparameter">
                     <Grid Background="#FFE5E5E5">
                         <Grid Background="#FF737687">
@@ -220,7 +224,7 @@
                                     </LinearGradientBrush>
                                 </Label.Background>
                             </Label>
-                            <Label Content="Schrägungswinkel:" HorizontalAlignment="Left" Margin="5,185,0,0" VerticalAlignment="Top" Width="329" FontFamily="Calibri" FontSize="16" Height="30" Grid.ColumnSpan="2" x:Name="lb_Winkel">
+                            <Label Content="Schrägungswinkel [°]:" HorizontalAlignment="Left" Margin="5,185,0,0" VerticalAlignment="Top" Width="329" FontFamily="Calibri" FontSize="16" Height="30" Grid.ColumnSpan="2" x:Name="lb_Winkel">
                                 <Label.Background>
                                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                         <LinearGradientBrush.RelativeTransform>
@@ -584,7 +588,7 @@
                                 </LinearGradientBrush>
                             </Label.Background>
                         </Label>
-                        <Label Content="" x:Name="lbl_stirnteilung" HorizontalAlignment="Left" Margin="183,297,0,0" VerticalAlignment="Top" Width="88" Height="30" FontSize="19" FontFamily="Calibri" Grid.Column="1">
+                        <Label Content="" x:Name="lbl_stirnteilung" HorizontalAlignment="Left" Margin="183.4,153,0,0" VerticalAlignment="Top" Width="88" Height="30" FontSize="19" FontFamily="Calibri" Grid.Column="1">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
@@ -602,7 +606,7 @@
                         </Label>
                         <Button x:Name="lbl_CatiaStarten" Click="Button_Click_1" Content="Catia starten" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="147" Height="43" FontFamily="Calibri" FontSize="16" FontStyle="Italic" FontWeight="Bold" Grid.ColumnSpan="2"/>
                         <Button x:Name="lbl_CatiaModell" Click="Button_Click_2" Content="3D-Modell erstellen" HorizontalAlignment="Left" Margin="116,413,0,0" VerticalAlignment="Top" Width="147" Height="43" FontFamily="Calibri" FontSize="16" FontStyle="Italic" FontWeight="Bold" Grid.Column="1"/>
-                        <Label Content="" x:Name="lbl_Normalteilung" HorizontalAlignment="Left" Margin="183,153,0,0" VerticalAlignment="Top" Width="88" Height="30" FontSize="19" FontFamily="Calibri" Grid.Column="1">
+                        <Label Content="" x:Name="lbl_Stirnteilung_1" HorizontalAlignment="Left" Margin="183.4,298,0,0" VerticalAlignment="Top" Width="88" Height="30" FontSize="19" FontFamily="Calibri" Grid.Column="1">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
@@ -808,8 +812,6 @@
                 </Grid.RowDefinitions>
                 <RadioButton Click="rtb_Gerad_Click" IsChecked="True" GroupName="Wähle ein Zahnrad" x:Name="rtb_Gerad" Content="Stirnzahnrad" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Calibri" FontSize="18" Margin="10,10,0,0" Width="121"/>
                 <Image x:Name="Im_Gerad" HorizontalAlignment="Left" Height="83" Margin="10,4,0,0" VerticalAlignment="Top" Width="86" Source="/Bilder/Stirnrad.PNG" Grid.RowSpan="2" Grid.Column="1"/>
-                <TextBox x:Name="TB_BohrungStirnrad" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="127,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="62" Grid.RowSpan="2"/>
-                <CheckBox x:Name="CB_BohrungStirn" Content="Bohrung" HorizontalAlignment="Left" Margin="41,0,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="CheckBox_Checked" Unchecked="CB_BohrungStirn_Unchecked"/>
             </Grid>
             <Label Content="Wähle ein Zahnradtyp:" VerticalAlignment="Top" FontSize="24" FontFamily="Calibri" Foreground="Black" AutomationProperties.IsOffscreenBehavior="Onscreen" Height="39" Margin="10,10,0,0" FontWeight="Bold" HorizontalAlignment="Left" Width="340">
                 <Label.Background>
@@ -850,7 +852,7 @@
                 <RadioButton Click="rtb_Schräg_Click" GroupName="Wähle ein Zahnrad" x:Name="rtb_Schräg" Content="Stirnrad schrägverzahnt" Margin="10,10,135,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="18" Height="22" Grid.ColumnSpan="2"/>
                 <Label IsEnabled="False" x:Name="lb_Winkeltext" Content="Schrägungswinkel in [°]:" HorizontalAlignment="Left" Margin="0,37,0,0" VerticalAlignment="Top" Width="178" Grid.Column="1"/>
                 <Slider IsEnabled="False" IsSnapToTickEnabled="true" Grid.Column="1" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" Width="164" Maximum="25" Minimum="1" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="True" TickPlacement="TopLeft" Cursor="" Name="sliderbeta" Value="1"/>
-                <TextBox IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="18" Margin="179,69,0,0" TextWrapping="Wrap" Text="{Binding ElementName=sliderbeta, Path=Value, UpdateSourceTrigger=LostFocus}" VerticalAlignment="Top" Width="35" x:Name="tb_Winkel"/>
+                <TextBox IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" Height="18" Margin="178.6,67,0,0" TextWrapping="Wrap" Text="{Binding ElementName=sliderbeta, Path=Value, UpdateSourceTrigger=LostFocus}" VerticalAlignment="Top" Width="35" x:Name="tb_Winkel"/>
             </Grid>
             <Grid x:Name="gr_Innenzahnrad" HorizontalAlignment="Left" Height="90" Margin="10,265,0,0" VerticalAlignment="Top" Width="340">
                 <Grid.Background>
@@ -869,11 +871,9 @@
                 </Grid.Background>
                 <Image  x:Name="Im_Innenzahnrad" HorizontalAlignment="Left" Height="85" Margin="249,3,0,0" VerticalAlignment="Top" Width="84" Source="/Bilder/Innenrad.PNG"/>
                 <RadioButton Click="rtb_Innenzahnrad_Click" GroupName="Wähle ein Zahnrad" x:Name="rtb_Innenzahnrad" Content="Innenzahnrad" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Calibri" FontSize="18" Margin="10,10,0,0"/>
-                <CheckBox x:Name="CB_BohrungInnen" Content="Bohrung" HorizontalAlignment="Left" Margin="41,53,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked_1" Unchecked="CB_BohrungInnen_Unchecked"/>
-                <TextBox x:Name="TB_BohrungInnen" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="124,51,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
             </Grid>
         </Grid>
-        <Label Content="Zahnrad Zar GmbH und Co. KG" HorizontalAlignment="Center" Margin="188,30,200,0" VerticalAlignment="Top" Height="65" Width="676" FontSize="50" FontWeight="Bold" FontFamily="Yu Gothic UI Light"/>
+        <Label Content="Zahnrad Zar GmbH und Co. KG" HorizontalAlignment="Center" Margin="188,21,200,0" VerticalAlignment="Top" Height="65" Width="676" FontSize="50" FontWeight="Bold" FontFamily="Yu Gothic UI Light"/>
         <Grid HorizontalAlignment="Left" Height="115" Margin="26,498,0,0" VerticalAlignment="Top" Width="287" Background="#FF737687">
             <Label Content="Wähle ein Kopfspiel:" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Calibri" FontSize="24" Margin="10,10,0,0" Width="267" FontWeight="Bold">
                 <Label.Background>

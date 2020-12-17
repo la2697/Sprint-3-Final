@@ -373,7 +373,7 @@ namespace GUI_Oberfläche_Zahnräder
                     lbl_Teilkreisdurchmesser.Content = Convert.ToString(av.d);
                     lbl_Zahnfußhöhe.Content = Convert.ToString(av.hf);
                     lbl_Zahnkopfhöhe.Content = Convert.ToString(av.ha);
-                    lbl_Normalteilung.Content = Convert.ToString(av.p);
+                    lbl_stirnteilung.Content = Convert.ToString(av.p);
                     lbl_Kopfkreisdurchmesser.Content = Convert.ToString(av.da);
                     lbl_Gewicht.Content = Convert.ToString(av.M);
                     lbl_Preis.Content = Convert.ToString(av.Wert);
@@ -501,7 +501,7 @@ namespace GUI_Oberfläche_Zahnräder
                     lbl_Teilkreisdurchmesser.Content = Convert.ToString(iv.d);
                     lbl_Zahnfußhöhe.Content = Convert.ToString(iv.hf);
                     lbl_Zahnkopfhöhe.Content = Convert.ToString(iv.ha);
-                    lbl_Normalteilung.Content = Convert.ToString(iv.p);
+                    lbl_stirnteilung.Content = Convert.ToString(iv.p);
                     lbl_Kopfkreisdurchmesser.Content = Convert.ToString(iv.da);
                     lbl_Gewicht.Content = Convert.ToString(iv.M);
                     lbl_Preis.Content = Convert.ToString(iv.Wert);
@@ -625,7 +625,7 @@ namespace GUI_Oberfläche_Zahnräder
                     lbl_Teilkreisdurchmesser.Content = Convert.ToString(sv.d);
                     lbl_Zahnfußhöhe.Content = Convert.ToString(sv.hf);
                     lbl_Zahnkopfhöhe.Content = Convert.ToString(sv.ha);
-                    lbl_Normalteilung.Content = Convert.ToString(sv.pn);
+                    lbl_stirnteilung.Content = Convert.ToString(sv.pn);
                     lbl_Kopfkreisdurchmesser.Content = Convert.ToString(sv.da);
                     lbl_Gewicht.Content = Convert.ToString(sv.M);
                     lbl_Preis.Content = Convert.ToString(sv.Wert);
@@ -652,7 +652,7 @@ namespace GUI_Oberfläche_Zahnräder
             lbl_Teilkreisdurchmesser.Content = " ";
             lbl_Zahnfußhöhe.Content = " ";
             lbl_Zahnkopfhöhe.Content = " ";
-            lbl_Normalteilung.Content = " ";
+            lbl_stirnteilung.Content = " ";
             lbl_Kopfkreisdurchmesser.Content = " ";
             lbl_Gewicht.Content = " ";
             lbl_Preis.Content = " ";
@@ -666,7 +666,10 @@ namespace GUI_Oberfläche_Zahnräder
             txt_Dicke.Text = " ";
             tb_Winkel.Text = " ";
             TB_0167.Text = "0,167";
-            lb_Winkeltext.Content = " ";
+            lb_Winkeltext.IsEnabled = false;
+            lbl_stirnmodul.Content = " ";
+            lbl_stirnteilung.Content = " ";
+            lb_Schrägungswinkel.Content = " ";
 
             //ComboButton und RadioButton zurücksetzen
             S235JR.IsSelected = true;
@@ -806,28 +809,9 @@ namespace GUI_Oberfläche_Zahnräder
             lbl_CatiaStarten.IsEnabled = false;
         }
 
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-            TB_BohrungStirnrad.IsEnabled = true;
+      
 
-        }
-
-        private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
-        {
-            TB_BohrungInnen.IsEnabled = true;
-        }
-
-        private void CB_BohrungInnen_Unchecked(object sender, RoutedEventArgs e)
-        {
-            TB_BohrungInnen.IsEnabled = false;
-            TB_BohrungInnen.Clear();
-        }
-
-        private void CB_BohrungStirn_Unchecked(object sender, RoutedEventArgs e)
-        {
-            TB_BohrungStirnrad.IsEnabled = false;
-            TB_BohrungStirnrad.Clear();
-        }
+        
     }
 
 
