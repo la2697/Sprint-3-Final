@@ -723,8 +723,7 @@ namespace GUI_Oberfläche_Zahnräder
                         // Öffne ein neues Part
                         cc.ErzeugePart();
 
-                        //Achsensystem erstellen
-                        //cc.ErzeugeAchsensystem();
+                        
 
 
                         // Erstelle eine Skizze
@@ -735,8 +734,7 @@ namespace GUI_Oberfläche_Zahnräder
                        cc.Stirnzahnrad(av);
 
 
-                      //Modellerzeugung
-                      //cc.Modellherstellung();
+                      
                         
                     }
                     else
