@@ -194,6 +194,14 @@ namespace GUI_Oberfläche_Zahnräder
             myPart.InWorkObject = myBody;
             Pad myPad = SF.AddNewPadFromRef(Ref_Verbindung, av.t);
             myPart.Update();
+
+            Reference RefBohrung1 = hsp_catiaPart.Part.CreateReferenceFromBRepName("FSur:(Face:(Brp:(Pad.1;2);None:();Cf11:());WithTemporaryBody;WithoutBuildError;WithInitialFeatureSupport;MonoFond;MFBRepVersion_CXR15)", myPad);
+            Hole catBohrung1 = SF.AddNewHoleFromPoint(0, 0, 0, RefBohrung1, 0);
+            Length catLengthBohrung1 = catBohrung1.Diameter;
+            catLengthBohrung1.Value = Convert.ToDouble(1 / 2);
+
+            hsp_catiaPart.Part.Update();
+
         }
 
 
