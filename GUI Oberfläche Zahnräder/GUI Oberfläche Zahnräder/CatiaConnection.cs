@@ -5,6 +5,8 @@ using MECMOD;
 using PARTITF;
 using HybridShapeTypeLib;
 using KnowledgewareTypeLib;
+using System.Windows.Shapes;
+using ProductStructureTypeLib;
 
 
 namespace GUI_Oberfläche_Zahnräder
@@ -130,90 +132,76 @@ namespace GUI_Oberfläche_Zahnräder
             Point2D point_AnfangspunktLinks = catfactory2D1.CreatePoint(-x_AnfangspunktFußkreis, y_AnfangspunktFußkreis);
 
             //Erzeuge Linien
-            Line2D line_Kopfkreis = catfactory2D1.CreateLine(xKopfkreis, yKopfkreis, -xKopfkreis, yKopfkreis);
-            line_Kopfkreis.StartPoint = point_KopfkreisLinks;
-            line_Kopfkreis.EndPoint = point_KopfkreisRechts;
+            Line2D line_AnfangspunktFußkreis = catfactory2D1.CreateLine(-x_AnfangspunktFußkreis, y_AnfangspunktFußkreis, xFußkreis, yFußkreis);
+            line_AnfangspunktFußkreis.StartPoint = point_AnfangspunktLinks;
+            line_AnfangspunktFußkreis.EndPoint = point_FußkreisLinks;
 
-            Line2D line_FußkreisKopfkreisLinks = catfactory2D1.CreateLine(xFußkreis, yFußkreis, xKopfkreis, yKopfkreis);
-            line_FußkreisKopfkreisLinks.StartPoint = point_FußkreisLinks;
-            line_FußkreisKopfkreisLinks.EndPoint = point_KopfkreisLinks;
+            Line2D line_FußkreisKopfkreis = catfactory2D1.CreateLine(xFußkreis, yFußkreis, xKopfkreis, yKopfkreis);
+            line_FußkreisKopfkreis.StartPoint = point_FußkreisLinks;
+            line_FußkreisKopfkreis.EndPoint = point_KopfkreisLinks;
 
-            Line2D line_FußkreisKopfkreisRechts = catfactory2D1.CreateLine(xFußkreis, yFußkreis, xKopfkreis, yKopfkreis);
-            line_FußkreisKopfkreisRechts.StartPoint = point_FußkreisRechts;
-            line_FußkreisKopfkreisRechts.EndPoint = point_KopfkreisRechts;
+            Line2D line_KopfkreislinksKopfkreisrechts = catfactory2D1.CreateLine(xKopfkreis, yKopfkreis, -xKopfkreis, yKopfkreis);
+            line_KopfkreislinksKopfkreisrechts.StartPoint = point_KopfkreisLinks;
+            line_KopfkreislinksKopfkreisrechts.EndPoint = point_KopfkreisRechts;
+
+            Line2D line_KopfkreisFußkreis = catfactory2D1.CreateLine(-xKopfkreis, yKopfkreis, -xFußkreis, yFußkreis);
+            line_KopfkreisFußkreis.StartPoint = point_KopfkreisRechts;
+            line_KopfkreisFußkreis.EndPoint = point_FußkreisRechts;
+
 
             //Kreise
-            Circle2D circle_AnfangFußkreis = catfactory2D1.CreateCircle(x0, y0, Fußkreisradius, -x_AnfangspunktFußkreis, y_AnfangspunktFußkreis);
-            circle_AnfangFußkreis.CenterPoint = point_Ursprung;
-            circle_AnfangFußkreis.EndPoint = point_AnfangspunktLinks;
-            circle_AnfangFußkreis.StartPoint = point_FußkreisLinks;
+            
 
             
             hsp_catiaProfil.CloseEdition();
 
             hsp_catiaPart.Part.Update();
 
-            Factory2D catfactory2D2 = hsp_catiaProfil.OpenEdition();
-            hsp_catiaPart.Part.Update();
-            hsp_catiaProfil.CloseEdition();
 
             //Profilerstellen Ende
 
             //Kreistmuster
 
-            ShapeFactory shapeFactory1 = (ShapeFactory)hsp_catiaPart.Part.ShapeFactory;
-                HybridShapeFactory hybridShapeFactory1 = (HybridShapeFactory)hsp_catiaPart.Part.HybridShapeFactory;
+            ShapeFactory SF = (ShapeFactory)hsp_catiaPart.Part.ShapeFactory;
+            HybridShapeFactory HSF = (HybridShapeFactory)hsp_catiaPart.Part.HybridShapeFactory;
+            Part myPart = hsp_catiaPart.Part;
 
-                Factory2D factory2D2 = hsp_catiaProfil.Factory2D;
+            Factory2D Factory2D2 = hsp_catiaProfil.Factory2D;
+            HybridShapePointCoord Ursprung = HSF.AddNewPointCoord(0, 0, 0);
+            Reference RefUrsprung = myPart.CreateReferenceFromObject(Ursprung);
+            HybridShapeDirection XDir = HSF.AddNewDirectionByCoord(1, 0, 0);
+            Reference RefXDir = myPart.CreateReferenceFromObject(XDir);
 
-                HybridShapePointCoord ursprung = hybridShapeFactory1.AddNewPointCoord(0, 0, 0);
-                Reference refUrsprung = hsp_catiaPart.Part.CreateReferenceFromObject(ursprung);
+            CircPattern Kreismuster = SF.AddNewSurfacicCircPattern(Factory2D2, 1, 2, 0, 0, 1, 1, RefUrsprung, RefXDir, false, 0, true, false);
+            Kreismuster.CircularPatternParameters = CatCircularPatternParameters.catInstancesandAngularSpacing;
+            AngularRepartition angularRepartition1 = Kreismuster.AngularRepartition;
+            Angle angle1 = angularRepartition1.AngularSpacing;
+            angle1.Value = Convert.ToDouble(360 / Convert.ToDouble(av.z));
+            AngularRepartition angularRepartition2 = Kreismuster.AngularRepartition;
+            IntParam intParam1 = angularRepartition2.InstancesCount;
+            intParam1.Value = Convert.ToInt32(av.z) + 1;
 
-                HybridShapeDirection xRichtung = hybridShapeFactory1.AddNewDirectionByCoord(1, 0, 0);
-                Reference refxRichtung = hsp_catiaPart.Part.CreateReferenceFromObject(xRichtung);
+            Reference Ref_Kreismuster = myPart.CreateReferenceFromObject(Kreismuster);
+            HybridShapeAssemble Verbindung = HSF.AddNewJoin(Ref_Kreismuster, Ref_Kreismuster);
+            Reference Ref_Verbindung = myPart.CreateReferenceFromObject(Verbindung);
+            HSF.GSMVisibility(Ref_Verbindung, 0);
+            myPart.Update();
+            Bodies bodies = myPart.Bodies;
+            Body myBody = bodies.Add();
+            myBody.set_Name("Zahnrad");
+            myBody.InsertHybridShape(Verbindung);
+            myPart.Update();
 
-                CircPattern kreismuster = shapeFactory1.AddNewSurfacicCircPattern(factory2D2, 1, 2, 0, 0, 1, 1, refUrsprung, refxRichtung, false, 0, true, false);
-                kreismuster.CircularPatternParameters = CatCircularPatternParameters.catInstancesandAngularSpacing;
-                AngularRepartition angularRepartition1 = kreismuster.AngularRepartition;
-                Angle angle1 = angularRepartition1.AngularSpacing;
-                angle1.Value = Convert.ToDouble(360 / av.z);
-                AngularRepartition angularRepartition2 = kreismuster.AngularRepartition;
-                IntParam intParam1 = angularRepartition2.InstancesCount;
-                intParam1.Value = Convert.ToInt32(av.z)+1;
-
-                //Kreismusterenden verbinden
-
-                Reference refKreismuster = hsp_catiaPart.Part.CreateReferenceFromObject(kreismuster);
-                HybridShapeAssemble verbindung = hybridShapeFactory1.AddNewJoin(refKreismuster, refKreismuster);
-                Reference refVerbindung = hsp_catiaPart.Part.CreateReferenceFromObject(verbindung);
-
-                hybridShapeFactory1.GSMVisibility(refVerbindung, 0);
-
-                hsp_catiaPart.Part.MainBody.InsertHybridShape(verbindung);
-
-
-            //Part aktualisieren
-                hsp_catiaPart.Part.Update();
-
-                
-
+            myPart.InWorkObject = myBody;
+            Pad myPad = SF.AddNewPadFromRef(Ref_Verbindung, av.t);
+            myPart.Update();
         }
 
-        public void Modellerzeugung()
-        {
-            // Hauptkoerper in Bearbeitung definieren
-            hsp_catiaPart.Part.InWorkObject = hsp_catiaPart.Part.MainBody;
 
-            // Block erzeugen
-            ShapeFactory catShapeFactory1 = (ShapeFactory)hsp_catiaPart.Part.ShapeFactory;
-            Pad catPad1 = catShapeFactory1.AddNewPad(hsp_catiaProfil, 2);
+        
+            
 
-            // Block umbenennen
-            catPad1.set_Name("Zahnrad-Modell");
-
-            // Part aktualisieren
-            hsp_catiaPart.Part.Update();
-        }
+        
 
         private double Schnittpunkt_X(double xMittelpunkt, double yMittelpunkt, double Radius1, double xMittelpunkt2, double yMittelpunkt2, double Radius2)
         {

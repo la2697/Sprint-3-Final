@@ -722,7 +722,7 @@ namespace GUI_Oberfläche_Zahnräder
 
 
                       //Modellerzeugung
-                      //cc.Modellerzeugung();
+                      //cc.Modellherstellung();
                         
                     }
                     else
