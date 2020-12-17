@@ -187,7 +187,7 @@ namespace GUI_Oberfläche_Zahnräder
             public double z;                            //Zähnezahl
             public double t;                            //Werkstoffdicke
             public double beta;                         //Schrägungswinkel (8°-25°)
-           
+            
             
 
             //Help
@@ -214,15 +214,17 @@ namespace GUI_Oberfläche_Zahnräder
             public double Wert;                         //Preis
             public double dm;                           //Mittlerer Durchmesser
             public double pn;                           //Normalteilung
+
             public void Berechnung()
             {
                 //Formeln
-                mt = mn / Math.Cos(beta);
+                double betarad = Math.PI * beta / 180;
+                mt = mn / Math.Cos(betarad);
                 d = mt * z;
                 h = (2 * mn) + c;
                 pn = Math.PI * mn;
                 pt = pn;
-                MessageBox.Show(Convert.ToString(pt));
+                
                 da = d + (2 * mn);
                 ha = mn;
                 hf = mn + c;
@@ -260,8 +262,9 @@ namespace GUI_Oberfläche_Zahnräder
         public void btn_Bestätigen_Click(object sender, RoutedEventArgs e)
         {
             //Außenverzahnung
-            
+
             if (rtb_Gerad.IsChecked == true)
+                
             {
                 switch (CB_Werkstoff.Text)
                 {
@@ -287,10 +290,10 @@ namespace GUI_Oberfläche_Zahnräder
                 lb_Kopfspiele1.Content = TB_0167.Text;
                 lb_Modul2.Content = txt_Modul.Text;
                 lb_Dicke1.Content = txt_Dicke.Text;
-                
-                
 
-             
+                IM_BildStirnzahnrad.Visibility = Visibility.Visible;
+
+
                 //Eingabechecks
                 //Eingabecheck Modul
                 string Zahlencheck = txt_Modul.Text;
@@ -374,7 +377,7 @@ namespace GUI_Oberfläche_Zahnräder
                     lbl_Kopfkreisdurchmesser.Content = Convert.ToString(av.da);
                     lbl_Gewicht.Content = Convert.ToString(av.M);
                     lbl_Preis.Content = Convert.ToString(av.Wert);
-                    MessageBox.Show(Convert.ToString(av.C));
+                    
 
                     //Felder ausbleichen
                     lbl_stirnmodul.IsEnabled = false;
@@ -417,6 +420,8 @@ namespace GUI_Oberfläche_Zahnräder
                 lb_Modul2.Content = txt_Modul.Text;
                 lb_Dicke1.Content = txt_Dicke.Text;
 
+                IM_Innen.Visibility = Visibility.Visible;
+
                 //Eingabechecks
                 //Modul
                 string Zahlencheck = txt_Modul.Text;
@@ -434,6 +439,8 @@ namespace GUI_Oberfläche_Zahnräder
                     MessageBox.Show("Fehler! Modul kann nur eine positive Zahl betragen.");
                     iv.Fehler = 1;
                 }
+
+
 
                 //Zähnezahl
                 Zahlencheck = txt_Zähnezahl.Text;
@@ -538,6 +545,8 @@ namespace GUI_Oberfläche_Zahnräder
                 lb_Modul2.Content = txt_Modul.Text;
                 lb_Dicke1.Content = txt_Dicke.Text;
                 lb_Schrägungswinkel.Content = tb_Winkel.Text;
+
+                IM_BildSchräg.Visibility = Visibility.Visible;
 
                 //Eingabechecks
                 //Modul
@@ -672,7 +681,13 @@ namespace GUI_Oberfläche_Zahnräder
             lb_Schrägungswinkel.IsEnabled = true;
             sliderbeta.IsEnabled = false;
             tb_Winkel.IsEnabled = false;
-            
+            lbl_CatiaModell.IsEnabled = true;
+            lbl_CatiaStarten.IsEnabled = true;
+            Eingangsparameter.IsSelected = true;
+            IM_BildStirnzahnrad.Visibility = Visibility.Hidden;
+            IM_BildSchräg.Visibility = Visibility.Hidden;
+            IM_Innen.Visibility = Visibility.Hidden;
+
             //Silder zurücksetzen
 
 
@@ -778,6 +793,8 @@ namespace GUI_Oberfläche_Zahnräder
             tb_Winkel.IsEnabled = true;
             sliderbeta.IsEnabled = true;
             lb_Winkeltext.IsEnabled = true;
+            lbl_CatiaModell.IsEnabled = false;
+            lbl_CatiaStarten.IsEnabled = false;
         }
 
         private void rtb_Innenzahnrad_Click(object sender, RoutedEventArgs e)
@@ -785,6 +802,31 @@ namespace GUI_Oberfläche_Zahnräder
             tb_Winkel.IsEnabled = false;
             sliderbeta.IsEnabled = false;
             lb_Winkeltext.IsEnabled = false;
+            lbl_CatiaModell.IsEnabled = false;
+            lbl_CatiaStarten.IsEnabled = false;
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            TB_BohrungStirnrad.IsEnabled = true;
+
+        }
+
+        private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
+        {
+            TB_BohrungInnen.IsEnabled = true;
+        }
+
+        private void CB_BohrungInnen_Unchecked(object sender, RoutedEventArgs e)
+        {
+            TB_BohrungInnen.IsEnabled = false;
+            TB_BohrungInnen.Clear();
+        }
+
+        private void CB_BohrungStirn_Unchecked(object sender, RoutedEventArgs e)
+        {
+            TB_BohrungStirnrad.IsEnabled = false;
+            TB_BohrungStirnrad.Clear();
         }
     }
 

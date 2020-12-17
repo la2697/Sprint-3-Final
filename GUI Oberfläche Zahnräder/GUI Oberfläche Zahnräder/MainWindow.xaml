@@ -252,6 +252,9 @@
                                     </LinearGradientBrush>
                                 </Label.Background>
                             </Label>
+                            <Image x:Name="IM_BildStirnzahnrad" Visibility="Hidden" Source="/Bilder/Stirnrad.PNG" HorizontalAlignment="Left" Height="194" Margin="76,251,0,0" VerticalAlignment="Top" Width="206" Grid.ColumnSpan="2"/>
+                            <Image x:Name="IM_BildSchräg" Visibility="Hidden" Source="/Bilder/Stirnrad SV.PNG" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="175" Margin="76,251,0,0" VerticalAlignment="Top" Width="189"/>
+                            <Image x:Name="IM_Innen" Visibility="Hidden" Source="/Bilder/Innenrad.PNG" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="188" Margin="76,257,0,0" VerticalAlignment="Top" Width="189"/>
                         </Grid>
                     </Grid>
                 </TabItem>
@@ -597,8 +600,8 @@
                                 </LinearGradientBrush>
                             </Label.Background>
                         </Label>
-                        <Button Click="Button_Click_1" Content="Catia starten" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="147" Height="43" FontFamily="Calibri" FontSize="16" FontStyle="Italic" FontWeight="Bold" Grid.ColumnSpan="2"/>
-                        <Button Click="Button_Click_2" Content="3D-Modell erstellen" HorizontalAlignment="Left" Margin="116,413,0,0" VerticalAlignment="Top" Width="147" Height="43" FontFamily="Calibri" FontSize="16" FontStyle="Italic" FontWeight="Bold" Grid.Column="1"/>
+                        <Button x:Name="lbl_CatiaStarten" Click="Button_Click_1" Content="Catia starten" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="147" Height="43" FontFamily="Calibri" FontSize="16" FontStyle="Italic" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                        <Button x:Name="lbl_CatiaModell" Click="Button_Click_2" Content="3D-Modell erstellen" HorizontalAlignment="Left" Margin="116,413,0,0" VerticalAlignment="Top" Width="147" Height="43" FontFamily="Calibri" FontSize="16" FontStyle="Italic" FontWeight="Bold" Grid.Column="1"/>
                         <Label Content="" x:Name="lbl_Normalteilung" HorizontalAlignment="Left" Margin="183,153,0,0" VerticalAlignment="Top" Width="88" Height="30" FontSize="19" FontFamily="Calibri" Grid.Column="1">
                             <Label.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -805,6 +808,8 @@
                 </Grid.RowDefinitions>
                 <RadioButton Click="rtb_Gerad_Click" IsChecked="True" GroupName="Wähle ein Zahnrad" x:Name="rtb_Gerad" Content="Stirnzahnrad" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Calibri" FontSize="18" Margin="10,10,0,0" Width="121"/>
                 <Image x:Name="Im_Gerad" HorizontalAlignment="Left" Height="83" Margin="10,4,0,0" VerticalAlignment="Top" Width="86" Source="/Bilder/Stirnrad.PNG" Grid.RowSpan="2" Grid.Column="1"/>
+                <TextBox x:Name="TB_BohrungStirnrad" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="127,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="62" Grid.RowSpan="2"/>
+                <CheckBox x:Name="CB_BohrungStirn" Content="Bohrung" HorizontalAlignment="Left" Margin="41,0,0,0" Grid.Row="1" VerticalAlignment="Top" Checked="CheckBox_Checked" Unchecked="CB_BohrungStirn_Unchecked"/>
             </Grid>
             <Label Content="Wähle ein Zahnradtyp:" VerticalAlignment="Top" FontSize="24" FontFamily="Calibri" Foreground="Black" AutomationProperties.IsOffscreenBehavior="Onscreen" Height="39" Margin="10,10,0,0" FontWeight="Bold" HorizontalAlignment="Left" Width="340">
                 <Label.Background>
@@ -864,6 +869,8 @@
                 </Grid.Background>
                 <Image  x:Name="Im_Innenzahnrad" HorizontalAlignment="Left" Height="85" Margin="249,3,0,0" VerticalAlignment="Top" Width="84" Source="/Bilder/Innenrad.PNG"/>
                 <RadioButton Click="rtb_Innenzahnrad_Click" GroupName="Wähle ein Zahnrad" x:Name="rtb_Innenzahnrad" Content="Innenzahnrad" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Calibri" FontSize="18" Margin="10,10,0,0"/>
+                <CheckBox x:Name="CB_BohrungInnen" Content="Bohrung" HorizontalAlignment="Left" Margin="41,53,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked_1" Unchecked="CB_BohrungInnen_Unchecked"/>
+                <TextBox x:Name="TB_BohrungInnen" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="124,51,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
             </Grid>
         </Grid>
         <Label Content="Zahnrad Zar GmbH und Co. KG" HorizontalAlignment="Center" Margin="188,30,200,0" VerticalAlignment="Top" Height="65" Width="676" FontSize="50" FontWeight="Bold" FontFamily="Yu Gothic UI Light"/>
